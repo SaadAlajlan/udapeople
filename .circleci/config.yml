@@ -426,7 +426,7 @@ jobs:
       - destroy-environment
       - revert-migrations
 
-cleanup:
+  cleanup:
     docker:
       - image: python:3.7-alpine3.11
     steps:
