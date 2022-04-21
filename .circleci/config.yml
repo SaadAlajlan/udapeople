@@ -373,7 +373,7 @@ jobs:
       - run:
           name: Install dependencies
           command: |
-          apk add --update curl awscli npm
+            apk add --update curl awscli npm
       - run:
           name: Get backend url
           command: |
