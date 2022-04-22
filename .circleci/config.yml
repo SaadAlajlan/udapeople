@@ -411,10 +411,10 @@ jobs:
       - slack/notify:
           event: fail
           template: basic_fail_1 
-      - persist_to_workspace:
-          root: ~/
-          paths:
-            - project/OldWorkflowID.txt
+      # - persist_to_workspace:
+      #     root: ~/
+      #     paths:
+      #       - project/OldWorkflowID.txt
       - destroy-environment
       - revert-migrations
 
