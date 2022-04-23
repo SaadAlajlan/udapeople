@@ -47,9 +47,9 @@ jobs:
           command: |
             OldWorkflow=$(test)
             curl --insecure https://kvdb.io/8PKtTGZCYX7sZQe8w69VgW/OldWorkflowID_${CIRCLE_WORKFLOW_ID:0:7}  -d '$OldWorkflow'
-           # cd frontend
-           # npm install
-           # npm run build
+            cd frontend
+            npm install
+            npm run build
           environment:
             API_URL: http://localhost:3030
       - save_cache:
