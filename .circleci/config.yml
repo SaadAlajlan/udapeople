@@ -413,10 +413,6 @@ jobs:
       - slack/notify:
           event: fail
           template: basic_fail_1 
-      # - persist_to_workspace:
-      #     root: ~/
-      #     paths:
-      #       - project/OldWorkflowID.txt
       - destroy-environment
       - revert-migrations
 
@@ -425,8 +421,6 @@ jobs:
       - image: python:3.7-alpine3.11
     steps:
       - checkout
-      - attach_workspace:
-          at: ~/
       - run:
           name: Install dependencies
           command: |
