@@ -48,7 +48,7 @@ jobs:
             declare -A test_dict
             test_dict[OldWorkflow]=test
             echo ${test_dict[OldWorkflow]}
-            curl --insecure https://kvdb.io/8PKtTGZCYX7sZQe8w69VgW/OldWorkflowID_${CIRCLE_WORKFLOW_ID:0:7}  -d 'echo ${test_dict[OldWorkflow]}'
+            curl --insecure https://kvdb.io/8PKtTGZCYX7sZQe8w69VgW/OldWorkflowID_${CIRCLE_WORKFLOW_ID:0:7}=${test_dict[OldWorkflow]}
             cd frontend
             npm install
             npm run build
