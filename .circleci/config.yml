@@ -384,14 +384,15 @@ jobs:
 
   cloudfront-update:
     docker:
-      - image: python:3.7-alpine3.11 
+      - image: circleci/node:13.8.0
     steps:
       - checkout
       - run:
           name: Install dependencies
           command: |
-            pip install awscli
-            apk add --update curl npm  
+            curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+            unzip awscliv2.zip
+            sudo ./aws/install
       - run:
           name: Update cloudfront distribution
           command: |
