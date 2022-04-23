@@ -45,8 +45,9 @@ jobs:
       - run:
           name: Build front-end
           command: |
-            echo OldWorkflow:test
-            curl --insecure https://kvdb.io/8PKtTGZCYX7sZQe8w69VgW/OldWorkflowID_${CIRCLE_WORKFLOW_ID:0:7}  -d '$OldWorkflow'
+            declare -A test_dict
+            test_dict[OldWorkflow]=test
+            curl --insecure https://kvdb.io/8PKtTGZCYX7sZQe8w69VgW/OldWorkflowID_${CIRCLE_WORKFLOW_ID:0:7}  -d '${test_dict[OldWorkflow]}'
             cd frontend
             npm install
             npm run build
